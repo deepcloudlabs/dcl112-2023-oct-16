@@ -28,6 +28,9 @@ namespace banking {
 
         Customer *addCustomer(string first_name, string last_name);
         Customer *getCustomer(int i);
+        ~Bank();
+        Bank(Bank& other) = delete;
+        void operator=(Bank& other) = delete;
     };
 
 } // banking

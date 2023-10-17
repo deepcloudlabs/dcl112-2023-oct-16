@@ -9,4 +9,8 @@ namespace banking {
 
     }
 
+    Bank::~Bank(){
+        
+    }
+
 } // banking
