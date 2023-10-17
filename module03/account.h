@@ -7,7 +7,7 @@ using namespace std;
 
 namespace banking {
 
-    class account { // encapsulation + information hiding -> automatic
+    class Account { // encapsulation + information hiding -> automatic
     private:
         // members: i) attribute ii) method
         // attribute, data, state, property
@@ -16,8 +16,8 @@ namespace banking {
     public:
         // methods
         // 1. Constructor(s) / Destructor
-        account(string iban, double balance = 1'000);
-        ~account();
+        Account(string iban, double balance = 1'000);
+        ~Account();
         // 2. getter methods
         double get_balance() const { // read-only/const method
             return this->balance;
