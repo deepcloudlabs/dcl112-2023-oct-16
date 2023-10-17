@@ -1,11 +1,7 @@
-//
-// Created by dcl on 10/16/2023.
-//
-
 #include "account.h"
 
 namespace banking {
-    account::account(string iban, double balance) : iban(iban) {
+    Account::Account(string iban, double balance) : iban(iban) {
         this->balance = balance;
         cout << "account object is just created: iban: " << iban << ", balance: " << balance << endl;
     }
@@ -16,18 +12,18 @@ namespace banking {
     }
      */
 
-    account::~account() {
+    Account::~Account() {
         cout << "account destructor is running..." << endl;
     }
 
-    double account::deposit(double amount) {
+    double Account::deposit(double amount) {
         // validation
         if (amount <= 0) return this->balance;
         this->balance += amount;
         return true;
     }
 
-    double account::withdraw(double amount) {
+    double Account::withdraw(double amount) {
         // validation
         if (amount <= 0) return this->balance;
         // business rule
