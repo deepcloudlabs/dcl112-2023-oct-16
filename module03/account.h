@@ -11,15 +11,24 @@ namespace banking {
     private:
         // members: i) attribute ii) method
         // attribute, data, state, property
-        string iban;
+        const string iban; // identity
         double balance;
     public:
         // methods
         // 1. Constructor(s) / Destructor
         account(string iban, double balance = 1'000);
         ~account();
-        // 2. setter/getter methods
+        // 2. getter methods
+        double get_balance() const { // read-only/const method
+            return this->balance;
+        }
+
+        string get_iban() const { // read-only/const method
+            return this->iban;
+        }
         // 3. business method
+        double deposit(double amount);
+        double withdraw(double amount);
 
     };
 
