@@ -26,7 +26,7 @@ namespace banking {
             return this->numberOfCustomers;
         }
 
-        Customer *addCustomer(string first_name, string last_name);
+        Customer *addCustomer(string first_name, string last_name,string iban);
         Customer *getCustomer(int i);
         ~Bank();
         Bank(Bank& other) = delete;
