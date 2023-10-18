@@ -12,6 +12,7 @@ namespace banking {
         // members: i) attribute ii) method
         // attribute, data, state, property
         const string iban; // identity
+    protected:
         double balance;
     public:
         // methods
@@ -27,8 +28,8 @@ namespace banking {
             return this->iban;
         }
         // 3. business method
-        double deposit(double amount);
-        double withdraw(double amount);
+        virtual double deposit(double amount);
+        virtual double withdraw(double amount);
 
     };
 

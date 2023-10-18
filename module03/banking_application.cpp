@@ -15,10 +15,10 @@ using namespace banking;
 int main() {
     Customer *customer;
     Account account("tr1",500.0);
-
+    //account.balance = 1'000'000'000;
     // Create an account that can has a 500.00 balance.
     cout << endl << "Creating the customer Jane Smith.";
-    customer = new Customer("Jane", "Smith",account);
+    customer = new Customer("Jane", "Smith");
     cout << endl << "Creating her account with a 500.00 balance.";
 
     cout << endl << "Withdraw 150.00";

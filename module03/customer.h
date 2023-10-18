@@ -1,4 +1,7 @@
 #include <string>
+#include <vector>
+using namespace std;
+
 #include "account.h"
 
 #ifndef MODULE03_CUSTOMER_H
@@ -9,10 +12,10 @@ namespace banking {
     class Customer {
         const string firstName;
         const string lastName;
-        Account account;
+        vector<Account*> accounts;
     public:
-        Customer(string firstName, string lastName, Account account) :
-                firstName(firstName), lastName(lastName), account(account) {}
+        Customer(string firstName, string lastName) :
+                firstName(firstName), lastName(lastName) {}
 
         string getFirstName() const {
             return this->firstName;
@@ -22,8 +25,8 @@ namespace banking {
             return this->lastName;
         }
 
-        Account &getAccount() {
-            return this->account;
+        Account *getAccount(int i) {
+            return this->accounts[i];
         }
 
     };
