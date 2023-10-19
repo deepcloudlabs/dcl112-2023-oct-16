@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <memory>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ namespace banking {
     class Customer {
         const string firstName;
         const string lastName;
-        vector<Account *> accounts;
+        vector<shared_ptr<Account>> accounts;
     public:
         Customer(const string& firstName, const string& lastName) : firstName(firstName), lastName(lastName) {}
 
@@ -21,9 +22,10 @@ namespace banking {
 
         string getLastName() const;
 
-        Account *getAccount(int i);
+        shared_ptr<Account> getAccount(int i);
 
-        void addAccount(Account *account);
+        void addAccount(shared_ptr<Account> account);
+
         ~Customer(){
             cout << "~Customer()" << endl;
         }

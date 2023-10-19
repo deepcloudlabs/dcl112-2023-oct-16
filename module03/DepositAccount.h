@@ -11,6 +11,8 @@ namespace banking {
 
     class DepositAccount : public Account {
     public:
+        DepositAccount(const string &&iban, double balance) : Account(iban, balance) {}
+
         ~DepositAccount();
 
         double deposit(double amount) override;

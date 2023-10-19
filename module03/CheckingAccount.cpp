@@ -18,4 +18,8 @@ namespace banking {
         this->balance += amount;
         return true;
     }
+
+    CheckingAccount::~CheckingAccount() {
+        cout << "CheckingAccount destructor is running..." << endl;
+    }
 } // banking

@@ -1,7 +1,3 @@
-//
-// Created by dcl on 10/17/2023.
-//
-
 #include "customer.h"
 
 namespace banking {
@@ -13,11 +9,11 @@ namespace banking {
         return this->lastName;
     }
 
-    Account *Customer::getAccount(int i) {
+    shared_ptr<Account> Customer::getAccount(int i) {
         return this->accounts[i];
     }
 
-    void Customer::addAccount(Account *account) {
+    void Customer::addAccount(shared_ptr<Account> account) {
         this->accounts.push_back(account);
     }
 
