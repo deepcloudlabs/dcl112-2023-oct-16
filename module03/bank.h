@@ -31,6 +31,7 @@ namespace banking {
 
         std::shared_ptr<Customer> getCustomer(int i);
 
+        virtual double get_total_balance() const ;
     };
 
 } // banking

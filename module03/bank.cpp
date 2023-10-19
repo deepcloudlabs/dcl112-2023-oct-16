@@ -11,4 +11,15 @@ namespace banking {
         return this->customers[i];
     }
 
+    double Bank::get_total_balance() const {
+        auto total_balance = 0.0;
+        for (auto& customer : customers){
+            for (auto i=0;i<customer->getNumOfAccounts();++i){
+                auto account = customer->getAccount(i);
+                total_balance += account->get_balance();
+            }
+        }
+        return total_balance;
+    }
+
 } // banking

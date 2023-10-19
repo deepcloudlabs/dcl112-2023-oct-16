@@ -9,12 +9,16 @@ namespace banking {
         return this->lastName;
     }
 
-    shared_ptr<Account> Customer::getAccount(int i) {
+    shared_ptr<Account> Customer::getAccount(int i) const {
         return this->accounts[i];
     }
 
     void Customer::addAccount(shared_ptr<Account> account) {
         this->accounts.push_back(account);
+    }
+
+    int Customer::getNumOfAccounts() const {
+        return accounts.size();
     }
 
 

@@ -22,7 +22,9 @@ namespace banking {
 
         string getLastName() const;
 
-        shared_ptr<Account> getAccount(int i);
+        shared_ptr<Account> getAccount(int i) const;
+
+        int getNumOfAccounts() const ;
 
         void addAccount(shared_ptr<Account> account);
 
