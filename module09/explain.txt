@@ -1,0 +1,10 @@
+ I. imperative programming
+    procedural programming, oop, ...
+
+II. declarative programming
+    sql: DP, DSL
+       select code,name,population
+       from countries
+       where continent = 'Asia'
+
+    functional programming + oop
