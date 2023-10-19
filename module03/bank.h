@@ -22,7 +22,8 @@ namespace banking {
             customers = new Customer *[capacity];
         }
 
-
+        Bank& operator=(Bank& other) = delete;
+        Bank(Bank& other) = delete;
         int getNumOfCustomers() const {
             return this->numberOfCustomers;
         }

@@ -14,3 +14,4 @@ add_executable(zooapp zoo_app.cpp Animal.cpp Animal.h
         Fish.h)
 add_executable(module08 main.cpp)
 add_executable(exercise01 exercise01.cpp)
+add_executable(exercise02 exercise02.cpp)
