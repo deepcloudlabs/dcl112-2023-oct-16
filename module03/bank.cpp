@@ -10,7 +10,8 @@ namespace banking {
             this->customers = new_customers;
             this->capacity = new_capacity;
         }
-        Customer *customer = new Customer(first_name, last_name, Account(iban));
+        Customer *customer = new Customer(first_name, last_name);
+        customer->addAccount(new Account(iban));
         this->customers[this->numberOfCustomers++] = customer;
         return customer;
     }

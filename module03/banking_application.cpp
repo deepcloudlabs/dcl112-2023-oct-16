@@ -9,9 +9,7 @@
 #include <iostream>
 using namespace std;
 using namespace banking;
-/*
- *
- */
+
 int main() {
     Customer *customer;
     Account account("tr1",500.0);
@@ -19,6 +17,7 @@ int main() {
     // Create an account that can has a 500.00 balance.
     cout << endl << "Creating the customer Jane Smith.";
     customer = new Customer("Jane", "Smith");
+    customer->addAccount(&account);
     cout << endl << "Creating her account with a 500.00 balance.";
 
     cout << endl << "Withdraw 150.00";

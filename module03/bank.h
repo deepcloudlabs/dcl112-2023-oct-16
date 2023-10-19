@@ -13,24 +13,28 @@ namespace banking {
         Customer **customers;
         int numberOfCustomers;
         string commercial_name;
-        const int bddk_id;
+        const int bddkId;
         int capacity;
     public:
-        Bank(int bddk_id, string commercial_name) : bddk_id(bddk_id), commercial_name(commercial_name), capacity(10),
+        Bank(int bddkId, const string& commercial_name) : bddkId(bddkId), commercial_name(commercial_name), capacity(10),
                                                     numberOfCustomers(0) {
             customers = new Customer *[capacity];
         }
 
 
-        int getNumOfCustomers() {
+        int getNumOfCustomers() const {
             return this->numberOfCustomers;
         }
 
-        Customer *addCustomer(string first_name, string last_name,string iban);
+        Customer *addCustomer(string first_name, string last_name, string iban);
+
         Customer *getCustomer(int i);
+
         ~Bank();
-        Bank(Bank& other) = delete;
-        void operator=(Bank& other) = delete;
+
+        Bank(Bank &other) = delete;
+
+        void operator=(Bank &other) = delete;
     };
 
 } // banking

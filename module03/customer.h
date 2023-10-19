@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+
 using namespace std;
 
 #include "account.h"
@@ -12,22 +13,17 @@ namespace banking {
     class Customer {
         const string firstName;
         const string lastName;
-        vector<Account*> accounts;
+        vector<Account *> accounts;
     public:
-        Customer(string firstName, string lastName) :
-                firstName(firstName), lastName(lastName) {}
+        Customer(const string& firstName, const string& lastName) : firstName(firstName), lastName(lastName) {}
 
-        string getFirstName() const {
-            return this->firstName;
-        }
+        string getFirstName() const;
 
-        string getLastName() const {
-            return this->lastName;
-        }
+        string getLastName() const;
 
-        Account *getAccount(int i) {
-            return this->accounts[i];
-        }
+        Account *getAccount(int i);
+
+        void addAccount(Account *account);
 
     };
 

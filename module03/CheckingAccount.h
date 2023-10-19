@@ -9,7 +9,7 @@ namespace banking {
     class CheckingAccount : public Account {
         double overdraft_amount;
     public:
-        CheckingAccount(string iban,double balance,double overdraft_amount)
+        CheckingAccount(const string&& iban,double balance,double overdraft_amount)
            : Account(iban,balance), overdraft_amount(overdraft_amount)
            {
 
