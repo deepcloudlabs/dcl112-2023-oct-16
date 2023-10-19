@@ -8,7 +8,6 @@
 #include <iostream>
 
 #include "Bank.h"
-#include "Customer.h"
 
 using namespace std;
 using namespace banking;
@@ -17,15 +16,15 @@ using namespace banking;
  *
  */
 int main() {
-    Bank *bank = new Bank(1, "denizbank");
+    Bank bank(1, "denizbank");
 
-    bank->addCustomer("Jane", "Simms");
-    bank->addCustomer("Owen", "Bryant");
-    bank->addCustomer("Tim", "Soley");
-    bank->addCustomer("Maria", "Soley");
+    bank.addCustomer("Jane", "Simms");
+    bank.addCustomer("Owen", "Bryant");
+    bank.addCustomer("Tim", "Soley");
+    bank.addCustomer("Maria", "Soley");
 
-    for ( int i = 0; i < bank->getNumOfCustomers(); i++ ) {
-        Customer *customer = bank->getCustomer(i);
+    for ( int i = 0; i < bank.getNumOfCustomers(); i++ ) {
+        auto customer = bank.getCustomer(i);
         cout << "Customer ["
              << (i+1) << "] is "
              << customer->getLastName()

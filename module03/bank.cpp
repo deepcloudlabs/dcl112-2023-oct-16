@@ -1,30 +1,14 @@
 #include "bank.h"
 
 namespace banking {
-    Customer *Bank::addCustomer(string first_name, string last_name) {
-        if (this->numberOfCustomers == this->capacity) {
-            int new_capacity = 2 * this->capacity;
-            Customer **new_customers = new Customer *[new_capacity];
-            memcpy(new_customers, this->customers, this->numberOfCustomers * sizeof(Customer *));
-            delete[] customers;
-            this->customers = new_customers;
-            this->capacity = new_capacity;
-        }
-        Customer *customer = new Customer(first_name, last_name);
-        this->customers[this->numberOfCustomers++] = customer;
+    std::shared_ptr<Customer> Bank::addCustomer(string first_name, string last_name) {
+        auto customer = std::make_shared<Customer>(first_name,last_name);
+        this->customers.push_back(customer) ;
         return customer;
     }
 
-    Customer *Bank::getCustomer(int i) {
-        if (i < 0) return nullptr;
-        if (i >= numberOfCustomers) return nullptr;
+    std::shared_ptr<Customer> Bank::getCustomer(int i) {
         return this->customers[i];
-    }
-
-    Bank::~Bank() {
-        for (int i = 0; i < numberOfCustomers; ++i)
-            delete customers[i];
-        delete[]this->customers;
     }
 
 } // banking

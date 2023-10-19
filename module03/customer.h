@@ -24,6 +24,9 @@ namespace banking {
         Account *getAccount(int i);
 
         void addAccount(Account *account);
+        ~Customer(){
+            cout << "~Customer()" << endl;
+        }
 
     };
 
