@@ -16,8 +16,9 @@ namespace banking {
         const int bddkId;
         int capacity;
     public:
-        Bank(int bddkId, const string& commercial_name) : bddkId(bddkId), commercial_name(commercial_name), capacity(10),
-                                                    numberOfCustomers(0) {
+        Bank(int bddkId, const string &commercial_name) : bddkId(bddkId), commercial_name(commercial_name),
+                                                          capacity(10),
+                                                          numberOfCustomers(0) {
             customers = new Customer *[capacity];
         }
 
@@ -26,7 +27,7 @@ namespace banking {
             return this->numberOfCustomers;
         }
 
-        Customer *addCustomer(string first_name, string last_name, string iban);
+        Customer *addCustomer(string first_name, string last_name);
 
         Customer *getCustomer(int i);
 

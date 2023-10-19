@@ -19,10 +19,10 @@ using namespace banking;
 int main() {
     Bank *bank = new Bank(1, "denizbank");
 
-    bank->addCustomer("Jane", "Simms", "tr1");
-    bank->addCustomer("Owen", "Bryant", "tr2");
-    bank->addCustomer("Tim", "Soley", "tr3");
-    bank->addCustomer("Maria", "Soley", "tr4");
+    bank->addCustomer("Jane", "Simms");
+    bank->addCustomer("Owen", "Bryant");
+    bank->addCustomer("Tim", "Soley");
+    bank->addCustomer("Maria", "Soley");
 
     for ( int i = 0; i < bank->getNumOfCustomers(); i++ ) {
         Customer *customer = bank->getCustomer(i);

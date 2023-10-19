@@ -1,7 +1,7 @@
 #include "bank.h"
 
 namespace banking {
-    Customer *Bank::addCustomer(string first_name, string last_name, string iban) {
+    Customer *Bank::addCustomer(string first_name, string last_name) {
         if (this->numberOfCustomers == this->capacity) {
             int new_capacity = 2 * this->capacity;
             Customer **new_customers = new Customer *[new_capacity];
@@ -11,7 +11,6 @@ namespace banking {
             this->capacity = new_capacity;
         }
         Customer *customer = new Customer(first_name, last_name);
-        customer->addAccount(new Account(iban));
         this->customers[this->numberOfCustomers++] = customer;
         return customer;
     }

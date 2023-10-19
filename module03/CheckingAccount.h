@@ -14,7 +14,8 @@ namespace banking {
            {
 
            }
-        double withdraw(double amount);
+        double withdraw(double amount) override;
+        double deposit(double amount) override;
     };
 
 } // banking

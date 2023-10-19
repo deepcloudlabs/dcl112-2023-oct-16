@@ -11,4 +11,11 @@ namespace banking {
         this->balance -= amount;
         return this->balance;
     }
+
+    double CheckingAccount::deposit(double amount) {
+        // validation
+        if (amount <= 0) return this->balance;
+        this->balance += amount;
+        return true;
+    }
 } // banking

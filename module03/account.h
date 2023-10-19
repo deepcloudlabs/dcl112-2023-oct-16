@@ -19,7 +19,7 @@ namespace banking {
         // 1. Constructor(s) / Destructor
         explicit Account(const string &iban, double balance = 1'000);
 
-        ~Account();
+        virtual ~Account();
 
         // 2. getter methods
         double get_balance() const { // read-only/const method
@@ -31,9 +31,9 @@ namespace banking {
         }
 
         // 3. business method
-        virtual double deposit(double amount);
+        virtual double deposit(double amount)=0;
 
-        virtual double withdraw(double amount);
+        virtual double withdraw(double amount)=0;
 
     };
 
