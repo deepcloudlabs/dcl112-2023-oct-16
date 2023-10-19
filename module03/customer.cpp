@@ -1,3 +1,4 @@
+#include <numeric>
 #include "customer.h"
 
 namespace banking {
@@ -19,6 +20,10 @@ namespace banking {
 
     int Customer::getNumOfAccounts() const {
         return accounts.size();
+    }
+
+    double Customer::getBalance() const {
+        return accumulate(accounts.begin(),accounts.end(),0.0,[](double acc,shared_ptr<Account> account){return acc + account->get_balance();});
     }
 
 

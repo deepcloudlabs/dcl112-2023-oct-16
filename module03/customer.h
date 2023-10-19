@@ -27,7 +27,7 @@ namespace banking {
         int getNumOfAccounts() const ;
 
         void addAccount(shared_ptr<Account> account);
-
+        double getBalance() const;
         ~Customer(){
             cout << "~Customer()" << endl;
         }

@@ -44,6 +44,7 @@ int main() {
              << endl  ;
     }
     cout << "Total balance of the bank: " << bank.get_total_balance() << endl;
+    cout << "Total balance of the bank: " << bank.get_total_balance_stl_algorithm() << endl;
     return 0;
 }
 
